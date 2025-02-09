@@ -4,11 +4,11 @@ require('dotenv').config();
 const { Client, GatewayIntentBits, ChannelType, PermissionFlagsBits } = require('discord.js');
 const { addUser } = require('./lib/db');
 
-const createContest = require('./lib/create-contest');
-const sendSubmission = require('./lib/send-submission');
+const createContest = require('./lib/commands/create-contest');
+const sendSubmission = require('./lib/commands/send-submission');
 const initializeGuild = require('./lib/init-guild');
-const submitWallet = require('./lib/submit-wallet');
-const enterContest = require('./lib/enter-contest');
+const submitWallet = require('./lib/commands/submit-wallet');
+const enterContest = require('./lib/commands/enter-contest');
 
 const token = process.env.DISCORD_BOT_TOKEN;
 if (!token) {

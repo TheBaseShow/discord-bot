@@ -1,4 +1,4 @@
-const AnthropicChat = require('./lib/anthropic');
+const AnthropicChat = require('../lib/anthropic');
 
 const tools = [
     {
