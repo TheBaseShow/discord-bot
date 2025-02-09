@@ -1,0 +1,403 @@
+[
+    {
+        "type": "constructor",
+        "inputs": [
+            {
+                "name": "fee",
+                "type": "uint256",
+                "internalType": "uint256"
+            },
+            {
+                "name": "host",
+                "type": "address",
+                "internalType": "address"
+            }
+        ],
+        "stateMutability": "nonpayable"
+    },
+    {
+        "type": "function",
+        "name": "contests",
+        "inputs": [
+            {
+                "name": "",
+                "type": "bytes32",
+                "internalType": "bytes32"
+            }
+        ],
+        "outputs": [
+            {
+                "name": "entryFee",
+                "type": "uint256",
+                "internalType": "uint256"
+            },
+            {
+                "name": "totalRaised",
+                "type": "uint256",
+                "internalType": "uint256"
+            },
+            {
+                "name": "cid",
+                "type": "bytes32",
+                "internalType": "bytes32"
+            },
+            {
+                "name": "winner",
+                "type": "address",
+                "internalType": "address"
+            },
+            {
+                "name": "startsAt",
+                "type": "uint96",
+                "internalType": "uint96"
+            },
+            {
+                "name": "currencyToken",
+                "type": "address",
+                "internalType": "address"
+            },
+            {
+                "name": "duration",
+                "type": "uint64",
+                "internalType": "uint64"
+            }
+        ],
+        "stateMutability": "view"
+    },
+    {
+        "type": "function",
+        "name": "createContest",
+        "inputs": [
+            {
+                "name": "title",
+                "type": "string",
+                "internalType": "string"
+            },
+            {
+                "name": "id",
+                "type": "bytes32",
+                "internalType": "bytes32"
+            },
+            {
+                "name": "cid",
+                "type": "bytes32",
+                "internalType": "bytes32"
+            },
+            {
+                "name": "currencyToken",
+                "type": "address",
+                "internalType": "address"
+            },
+            {
+                "name": "entryFee",
+                "type": "uint256",
+                "internalType": "uint256"
+            },
+            {
+                "name": "duration",
+                "type": "uint64",
+                "internalType": "uint64"
+            }
+        ],
+        "outputs": [],
+        "stateMutability": "nonpayable"
+    },
+    {
+        "type": "function",
+        "name": "gameHost",
+        "inputs": [],
+        "outputs": [
+            {
+                "name": "",
+                "type": "address",
+                "internalType": "address"
+            }
+        ],
+        "stateMutability": "view"
+    },
+    {
+        "type": "function",
+        "name": "getContestDetails",
+        "inputs": [
+            {
+                "name": "contestId",
+                "type": "bytes32",
+                "internalType": "bytes32"
+            }
+        ],
+        "outputs": [
+            {
+                "name": "contestView",
+                "type": "tuple",
+                "internalType": "struct ITheGameShow.ContestView",
+                "components": [
+                    {
+                        "name": "currencyToken",
+                        "type": "address",
+                        "internalType": "address"
+                    },
+                    {
+                        "name": "cid",
+                        "type": "bytes32",
+                        "internalType": "bytes32"
+                    },
+                    {
+                        "name": "entryFee",
+                        "type": "uint256",
+                        "internalType": "uint256"
+                    },
+                    {
+                        "name": "startsAt",
+                        "type": "uint256",
+                        "internalType": "uint256"
+                    },
+                    {
+                        "name": "endsAt",
+                        "type": "uint256",
+                        "internalType": "uint256"
+                    },
+                    {
+                        "name": "winner",
+                        "type": "address",
+                        "internalType": "address"
+                    }
+                ]
+            }
+        ],
+        "stateMutability": "view"
+    },
+    {
+        "type": "function",
+        "name": "platformFeeBps",
+        "inputs": [],
+        "outputs": [
+            {
+                "name": "",
+                "type": "uint256",
+                "internalType": "uint256"
+            }
+        ],
+        "stateMutability": "view"
+    },
+    {
+        "type": "function",
+        "name": "registerSubmission",
+        "inputs": [
+            {
+                "name": "contestId",
+                "type": "bytes32",
+                "internalType": "bytes32"
+            },
+            {
+                "name": "cid",
+                "type": "bytes32",
+                "internalType": "bytes32"
+            },
+            {
+                "name": "signature",
+                "type": "bytes",
+                "internalType": "bytes"
+            }
+        ],
+        "outputs": [],
+        "stateMutability": "payable"
+    },
+    {
+        "type": "function",
+        "name": "selectWinner",
+        "inputs": [
+            {
+                "name": "contestId",
+                "type": "bytes32",
+                "internalType": "bytes32"
+            },
+            {
+                "name": "winner",
+                "type": "address",
+                "internalType": "address"
+            }
+        ],
+        "outputs": [],
+        "stateMutability": "nonpayable"
+    },
+    {
+        "type": "function",
+        "name": "withdraw",
+        "inputs": [
+            {
+                "name": "token",
+                "type": "address",
+                "internalType": "address"
+            }
+        ],
+        "outputs": [],
+        "stateMutability": "nonpayable"
+    },
+    {
+        "type": "event",
+        "name": "ContestCreated",
+        "inputs": [
+            {
+                "name": "contestId",
+                "type": "bytes32",
+                "indexed": true,
+                "internalType": "bytes32"
+            },
+            {
+                "name": "currencyToken",
+                "type": "address",
+                "indexed": true,
+                "internalType": "address"
+            },
+            {
+                "name": "entryFee",
+                "type": "uint256",
+                "indexed": false,
+                "internalType": "uint256"
+            },
+            {
+                "name": "cid",
+                "type": "bytes32",
+                "indexed": false,
+                "internalType": "bytes32"
+            },
+            {
+                "name": "deadline",
+                "type": "uint256",
+                "indexed": false,
+                "internalType": "uint256"
+            },
+            {
+                "name": "title",
+                "type": "string",
+                "indexed": false,
+                "internalType": "string"
+            }
+        ],
+        "anonymous": false
+    },
+    {
+        "type": "event",
+        "name": "ContestUpdated",
+        "inputs": [
+            {
+                "name": "contestId",
+                "type": "bytes32",
+                "indexed": true,
+                "internalType": "bytes32"
+            },
+            {
+                "name": "cid",
+                "type": "bytes32",
+                "indexed": false,
+                "internalType": "bytes32"
+            }
+        ],
+        "anonymous": false
+    },
+    {
+        "type": "event",
+        "name": "SubmissionRegistered",
+        "inputs": [
+            {
+                "name": "contestId",
+                "type": "bytes32",
+                "indexed": true,
+                "internalType": "bytes32"
+            },
+            {
+                "name": "participant",
+                "type": "address",
+                "indexed": true,
+                "internalType": "address"
+            },
+            {
+                "name": "cid",
+                "type": "bytes32",
+                "indexed": false,
+                "internalType": "bytes32"
+            }
+        ],
+        "anonymous": false
+    },
+    {
+        "type": "event",
+        "name": "WinnerSelected",
+        "inputs": [
+            {
+                "name": "contestId",
+                "type": "bytes32",
+                "indexed": true,
+                "internalType": "bytes32"
+            },
+            {
+                "name": "winner",
+                "type": "address",
+                "indexed": true,
+                "internalType": "address"
+            },
+            {
+                "name": "prize",
+                "type": "uint256",
+                "indexed": false,
+                "internalType": "uint256"
+            }
+        ],
+        "anonymous": false
+    },
+    {
+        "type": "error",
+        "name": "ContestAlreadyExists",
+        "inputs": []
+    },
+    {
+        "type": "error",
+        "name": "ContestDoesNotExist",
+        "inputs": []
+    },
+    {
+        "type": "error",
+        "name": "ContestHasEnded",
+        "inputs": []
+    },
+    {
+        "type": "error",
+        "name": "ContestIsStillOpen",
+        "inputs": []
+    },
+    {
+        "type": "error",
+        "name": "EmptyContest",
+        "inputs": []
+    },
+    {
+        "type": "error",
+        "name": "EmptySubmission",
+        "inputs": []
+    },
+    {
+        "type": "error",
+        "name": "InvalidEntryFee",
+        "inputs": []
+    },
+    {
+        "type": "error",
+        "name": "NothingToWithdraw",
+        "inputs": []
+    },
+    {
+        "type": "error",
+        "name": "OnlyAgent",
+        "inputs": []
+    },
+    {
+        "type": "error",
+        "name": "SendEthFailed",
+        "inputs": []
+    },
+    {
+        "type": "error",
+        "name": "WinnerWasAlreadyDrawn",
+        "inputs": []
+    }
+]
